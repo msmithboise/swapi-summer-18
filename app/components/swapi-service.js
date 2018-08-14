@@ -15,5 +15,12 @@ getPeople(draw, drawError) {
   .then(draw)
   .catch(drawError)
 }
+
+getPlanets(draw, drawError) {
+  fetch('https://swapi.co/api/planets')
+  .then(res => res.json())
+  .then(draw)
+  .catch(drawError)
+}
 } 
 

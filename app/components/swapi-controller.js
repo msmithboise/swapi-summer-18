@@ -10,11 +10,19 @@ let app = document.getElementById('app')
   </button>
   <div id="starships"></div>
   
-  <div id="people"></div>
   <button onclick="app.controllers.swapi.getPeople()">
   Get People
   </button>
-  </div>`
+  </div>
+<div id="people"></div>
+
+
+<button onclick="app.controllers.swapi.getPlanets()">
+  Get Planets
+  </button>
+  </div>
+<div id="planets"></div>
+`
 }
  function drawStarships(data) {
   let starshipsElem = document.getElementById('starships')
@@ -38,6 +46,17 @@ let app = document.getElementById('app')
    peopleElem.innerHTML = template
  }
 
+ function drawPlanets(data){
+  let planetsElem = document.getElementById('planets')
+  let template = ''
+  data.results.forEach(planet => {
+    template += `<div>
+    ${planet.name}
+    </div>`
+  })
+  planetsElem.innerHTML = template
+}
+
 
 
  function drawError(error) {
@@ -55,6 +74,10 @@ let app = document.getElementById('app')
 
 getPeople(){
   swapiService.getPeople(drawPeople,drawError)
+}
+
+getPlanets(){
+  swapiService.getPlanets(drawPlanets,drawError)
 }
 
  } 
