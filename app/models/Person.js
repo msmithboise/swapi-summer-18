@@ -1,3 +1,4 @@
+
 export default class Person {
   constructor(reqData) {
     this.name = reqData.name
@@ -13,10 +14,11 @@ export default class Person {
     this.species = reqData.species
     this.starships = reqData.starships
     this.url = reqData.url
+    this.id = reqData.url
   }
 
-  // get filmsData() {
+  getStarships() {
 
-  // }
+  }
 
 }
