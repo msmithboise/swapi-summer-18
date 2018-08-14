@@ -1,12 +1,10 @@
 import SwapiController from './components/swapi-controller.js'
-
-class App {
+ class App {
   constructor() {
     this.controllers = {
       swapi: new SwapiController
     }
   }
 }
-
-const app = new App()
-window.app = app
+ const app = new App()
+window.app = app 
